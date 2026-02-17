@@ -5,6 +5,7 @@ using Noisedle.Wordsystem;
 var retriever = new WordRetriever();
 Random rnd = new Random();
 int r = rnd.Next(retriever.PossibleWords.Count);
+Console.Clear();
 string wordToGuess = retriever.PossibleWords[r];
 
 List<String> absentLetters = new List<string>();

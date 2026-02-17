@@ -14,12 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Wordsystem\wordle-La.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Wordsystem\wordle-Ta.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="Wordsystem\wordle-La.txt" />
+    <EmbeddedResource Include="Wordsystem\wordle-Ta.txt" />
   </ItemGroup>
 
 </Project>

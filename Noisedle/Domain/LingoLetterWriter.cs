@@ -26,6 +26,7 @@ namespace Noisedle.Domain
                 }
                 markIndex++;
             }
+            Console.WriteLine();
 
 
         }

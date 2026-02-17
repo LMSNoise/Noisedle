@@ -8,12 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Wordsystem\WordRetriever.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Wordsystem\wordle-La.txt" />
     <EmbeddedResource Include="Wordsystem\wordle-Ta.txt" />
   </ItemGroup>

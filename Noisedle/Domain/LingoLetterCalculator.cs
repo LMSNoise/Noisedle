@@ -27,6 +27,27 @@ namespace Noisedle.Domain
             return new Feedback(attemptedguess, marks);
         }
 
+        public static List<char> GetUnusedLetters(string guess, string target)
+        {
+            guess = guess.ToLower();
+            target = target.ToLower();
+
+            var returnChars = new List<char>();
+
+            char[] actualchars = target.ToCharArray();
+            char[] guessedchars = guess.ToCharArray();
+
+            foreach (char c in guessedchars)
+            {
+                if (!actualchars.Contains(c))
+                {
+                    returnChars.Add(c); 
+                }
+            }
+            return returnChars;
+
+        }
+
         public static Feedback Calculate(string guess, string target)
         {
             guess = guess.ToLower();

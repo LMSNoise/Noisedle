@@ -8,7 +8,7 @@ int r = rnd.Next(retriever.PossibleWords.Count);
 Console.Clear();
 string wordToGuess = retriever.PossibleWords[r];
 
-List<String> absentLetters = new List<string>();
+List<char> absentLetters = new List<char>();
 
 List<Feedback> feedbackhistory = new List<Feedback>();
 
@@ -24,6 +24,18 @@ while(true){
     }
 
     Console.WriteLine();
+    //write locked out chars
+    if (absentLetters.Count > 0)
+    {
+        Console.WriteLine("Letters not in word:");
+        foreach(char c in absentLetters.Distinct())
+        {
+            Console.Write(c); 
+        }
+        Console.WriteLine();
+        Console.WriteLine();
+    }
+
     Console.WriteLine("Guess word: ");
 
     string input = Console.ReadLine();
@@ -35,6 +47,7 @@ while(true){
 
     var guessfeedback = LingoLetterCalculator.Calculate(input, wordToGuess);
     feedbackhistory.Add(guessfeedback);
+    absentLetters.AddRange(LingoLetterCalculator.GetUnusedLetters(input, wordToGuess));
     if (!guessfeedback.Marks.Contains(Mark.ABSENT) && !guessfeedback.Marks.Contains(Mark.PRESENT))
     {
         Console.WriteLine("You win!");
